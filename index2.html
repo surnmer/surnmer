@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('f5f5b2d463886f8eae12d55d50430a49');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '남승균 ♥ 신지인 결혼식에 초대합니다',
+        description: '4월 23일 일요일 낮 12시 20분 보타닉파크웨딩 B2 오키드홀',
+        imageUrl:
+          'https://resources.barunsonmcard.com/upload/invitation/230219/308473/gallery/03c83f3e-c6a4-4645-94f6-594fdb44561a.jpg',
+        link: {
+          mobileWebUrl: 'https://www.barunsonmcard.com/m/sgji20230423',
+          webUrl: 'https://www.barunsonmcard.com/m/sgji20230423',
+        },
+      },
+      social: {
+        likeCount: 좋아요 수, //99999가 최대입니다
+        commentCount: 댓글 수, //99999가 최대입니다
+        sharedCount: 공유 수, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '모바일 청첩장',
+          link: {
+            mobileWebUrl: 'https://www.barunsonmcard.com/m/sgji20230423',
+            webUrl: 'https://www.barunsonmcard.com/m/sgji20230423',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
